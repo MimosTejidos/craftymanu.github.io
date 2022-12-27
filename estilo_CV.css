@@ -1,3 +1,4 @@
+/* inicio de estilos generales */
 * {
     box-sizing: border-box;
 }
@@ -10,80 +11,32 @@ p {
     font-family: 'Roboto', 'Times New Roman', Times, serif;
 }
 
-/* #persona {
-    flex-direction: row-reverse;
-} */
+/* fin de estilos generales */
 
-/* comienzo de media query */
+
+
+
+
+/* Inicio de media query */
 /* Smartphone */
 @media screen and (max-width: 575px) {
-    #logo {
-        display: none;
-    }
-    #p-img {
-        width: 100%;
-        max-width: 300px;
-    }
-    #persona {
-        text-align: center;
-    }
-
+}
+#logo {
+    display: none;
 }
 /* Tablet */
 @media screen and (min-width: 576px) and (max-width: 768px) {
-    #p-img {
-        /* width: 25vw; */
-        height: 25vw;
-        
-    }
-    #divFoto {
-        float: left;
-        width: fit-content;
-    }
-    * {
-        background-color:blanchedalmond;
-    }
-    #nombre {
-        float: left;
-        height: 25vw;
-        width: auto;
-    }
-    #persona {
-        display: flex;
-        flex-direction: column-reverse;
-        text-align: center;
-    }
     
 }
-/* Desktop */ 
+
+/* Desktop */
 @media screen and (min-width: 768px) {
-    #p-img {
-        /* width: 25vw; */
-        height: 25vw;
-    }
-    #divFoto {
-        float: left;
-    }
-    #nombre {
-        float: left;
-        height: 25vw;
-
-    }
     
 }
-/* fin de media query */
+/* Fin de media query */
 
 
-
-
-
-
-
-/* to be erased after: */
-
-div {
-    border: 2px solid green;
-}
-section {
-    border: 1px solid red;
+/* para eliminar al finalizar */
+* {
+    border: 1px solid green;
 }
