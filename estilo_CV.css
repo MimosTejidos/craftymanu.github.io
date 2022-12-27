@@ -3,27 +3,59 @@
     box-sizing: border-box;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'Bree Serif', serif;
 }
+h4 {
+    font-size: calc(1rem + .25vw);
+}
 
-p {
+p, ul {
     font-family: 'Roboto', 'Times New Roman', Times, serif;
 }
 
 /* fin de estilos generales */
 
+#p-img {
+    width: 100%;
+    max-width: 300px;
+}
+#nombre {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#navbar {
+    background-color: antiquewhite;
+}
+#navbar ul {
+    list-style: none;
+}
+#navbar ul li {
+    display: inline;
+}
 
 
 
 
 /* Inicio de media query */
+
 /* Smartphone */
 @media screen and (max-width: 575px) {
+    #logo {
+        display: none;
+    }
+    #divFoto {
+        text-align: center;
+    }
+    #p-img {
+        width: 100vw;
+    }
 }
-#logo {
-    display: none;
-}
+
+
+
 /* Tablet */
 @media screen and (min-width: 576px) and (max-width: 768px) {
     
@@ -31,8 +63,35 @@ p {
 
 /* Desktop */
 @media screen and (min-width: 768px) {
-    
+    #persona {
+        display: flex;
+    }
+    #p-img {
+        width: 250px;
+    }
+    #nombre {
+        width: 75vw;
+    }
+    #mainDiv {
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+    }
+    #contacto {
+        width: 24vw;
+        max-width: 248px;
+    }
+    #experiencia {
+        width: 38vw;
+        max-width: 50%;
+    }
+    #habilidades {
+        width: 38vw;
+        max-width: 50%;
+    }
 }
+
+
+
 /* Fin de media query */
 
 
