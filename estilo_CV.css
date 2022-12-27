@@ -2,12 +2,88 @@
     box-sizing: border-box;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-family: 'Bree Serif', serif;
 }
 
 p {
-    font-family: 'Passions Conflict', cursive;
+    font-family: 'Roboto', 'Times New Roman', Times, serif;
+}
+
+/* #persona {
+    flex-direction: row-reverse;
+} */
+
+/* comienzo de media query */
+/* Smartphone */
+@media screen and (max-width: 575px) {
+    #logo {
+        display: none;
+    }
+    #p-img {
+        width: 100%;
+        max-width: 300px;
+    }
+    #persona {
+        text-align: center;
+    }
+
+}
+/* Tablet */
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    #p-img {
+        /* width: 25vw; */
+        height: 25vw;
+        
+    }
+    #divFoto {
+        float: left;
+        width: fit-content;
+    }
+    * {
+        background-color:blanchedalmond;
+    }
+    #nombre {
+        float: left;
+        height: 25vw;
+        width: auto;
+    }
+    #persona {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    
+}
+/* Desktop */ 
+@media screen and (min-width: 768px) {
+    #p-img {
+        /* width: 25vw; */
+        height: 25vw;
+    }
+    #divFoto {
+        float: left;
+    }
+    #nombre {
+        float: left;
+        height: 25vw;
+
+    }
+    
+}
+/* fin de media query */
+
+
+
+
+
+
+
+/* to be erased after: */
+
+div {
+    border: 2px solid green;
+}
+section {
+    border: 1px solid red;
 }
