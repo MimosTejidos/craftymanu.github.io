@@ -1,3 +1,26 @@
+:root {
+    /* CSS HEX */
+    --tiffany-blue: #21BDAE;
+    --celeste: #BAF3ED;
+    --blue-green: #115F58;
+    --azure: #E7FBF9;
+    --rich-black: #0A3632;
+
+
+    --celeste: #baf3edff;
+    --turquoise: #40e0d0ff;
+    --prussian-blue: #002c41ff;
+    --maximum-yellow-red: #f6b23bff;
+    --orange-peel: #f39f33ff;
+
+
+    --ming: #006d77ff;
+    --middle-blue-green: #83c5beff;
+    --alice-blue: #edf6f9ff;
+    --unbleached-silk: #ffddd2ff;
+    --dark-salmon: #e29578ff;
+}
+
 /* inicio de estilos generales */
 * {
     box-sizing: border-box;
@@ -12,9 +35,14 @@ h4 {
 
 p, ul {
     font-family: 'Roboto', 'Times New Roman', Times, serif;
+    list-style-type: disclosure-closed;
 }
 
 /* fin de estilos generales */
+body {
+    background-color: whitesmoke;
+    color: #002c41;
+}
 
 #p-img {
     width: 100%;
@@ -27,7 +55,8 @@ p, ul {
     justify-content: center;
 }
 #navbar {
-    background-color: antiquewhite;
+    background-color: #f39f33;
+    color: #002c41;
 }
 #navbar ul {
     list-style: none;
@@ -36,7 +65,20 @@ p, ul {
     display: inline;
 }
 
+section {
+    padding: 1.5vh 1vw;
+}
 
+
+#persona {
+    background-color: #002c41;
+    color: whitesmoke;
+}
+
+
+#mainDiv {
+    display: block;
+}
 
 
 /* Inicio de media query */
@@ -47,22 +89,29 @@ p, ul {
         display: none;
     }
     #divFoto {
+        width: 100vw;
         text-align: center;
     }
     #p-img {
         width: 100vw;
+        margin-bottom: 2vh;
     }
+    #persona {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        color: #f39f33;
+    }
+    #nombre {
+        width: 100vw;
+    }
+    
 }
 
 
 
 /* Tablet */
 @media screen and (min-width: 576px) and (max-width: 768px) {
-    
-}
-
-/* Desktop */
-@media screen and (min-width: 768px) {
     #persona {
         display: flex;
     }
@@ -72,21 +121,46 @@ p, ul {
     #nombre {
         width: 75vw;
     }
+}
+
+
+
+/* Desktop */
+@media screen and (min-width: 768px) {
+    #persona {
+        display: flex;
+        text-align: center;
+    }
+    #p-img {
+        width: 250px;
+    }
+    #nombre {
+        width: 75vw;
+    }
     #mainDiv {
+        display: flex;
         flex-direction: row-reverse;
+        flex-wrap: wrap-reverse;
+        }
+    #cvDiv {
+        display: flex;
         flex-wrap: wrap;
+        flex-direction: row-reverse;
+        /* flex-wrap: nowrap; */
+    }
+    .CVdiv {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+    }
+    .cv {
+        width: 38vw;
+        /* max-width: 25%; */
+        max-width: 40%;
     }
     #contacto {
-        width: 24vw;
-        max-width: 248px;
-    }
-    #experiencia {
-        width: 38vw;
-        max-width: 50%;
-    }
-    #habilidades {
-        width: 38vw;
-        max-width: 50%;
+        background-color: #f39f33;
+        color: #002c41;
     }
 }
 
@@ -95,7 +169,13 @@ p, ul {
 /* Fin de media query */
 
 
+
+
+
 /* para eliminar al finalizar */
-* {
-    border: 1px solid green;
+div {
+    border: 2px solid green;
+}
+section {
+    border: 1px solid blue;
 }

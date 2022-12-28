@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="row">
-            <div id="logo" class="col">
+            <div id="logo" class="col-2">
                 <img src="" alt="logo">
             </div>
             <nav id="navbar" class="col">
@@ -26,7 +26,7 @@
     </header>
 
     <div id="persona">
-        <div id="divFoto">
+        <div id="divFoto" class="col-md-4">
             <img id="p-img" src="https://randomuser.me/api/portraits/women/79.jpg" alt="foto de perfil de Lena Hanson">
         </div>
         <div id="nombre">
@@ -36,59 +36,66 @@
     </div>
 
     <main>
-        <div class="row" id="mainDiv">
-        <section id="experiencia" class="col">
-            <h3>Experiencia</h3>
-            <h4 class="h6">Lorem ipsum</h4>
-            <p>Ut aliquam sem ac odio sollicitudin luctus. Duis non neque finibus, gravida odio non, eleifend metus. Proin molestie turpis cursus aliquam congue. </p>
-            <ul>
-                <li>Lorem ipsum dolor sit amest, consectetur adipiscing elit.</li>
-                <li>Proin vel arcu vitae ex tincidunt condimentum.</li>
-                <li>Curabitur suscipit neque sed urna pellentesque dictum.</li>
-            </ul>
-            <h4 class="h6">Phasellus arcu.</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus libero ac accumsan gravida. Ut cursus dignissim magna, nec elementum lectus gravida sed. </p>
-            <ul>    
-                <li>Proin viverra leo vitae sem finibus fringilla.</li>
-                <li>Nulla faucibus odio sed sapien dignissim tempor.</li>
-                <li>Donec tristique libero ut nulla aliquam, sit amet sagittis lacus tempus.</li>
-            </ul>
-        </section>
-        <section id="habilidades" class="col">
-            <h3>Habilidades</h3>
-            <h4 class="h6">Elementum lorem vulputate.</h4>
-            <p>Nunc ultricies vehicula luctus. Integer lacus enim, suscipit eget tincidunt vitae, posuere id enim cras.</p>
-            <ul>
-                <li>Quisque id felis ut justo tincidunt blandit id a neque.</li>
-                <li>Maecenas et augue vitae magna iaculis cursus.</li>
-                <li>Etiam congue tellus eget nibh semper ullamcorper.</li>
-            </ul>
-            <h4 class="h6">Aliquam</h4>
-            <p>Proin at nulla quis nibh tristique molestie at cursus ante. Morbi semper.</p>
-            <ul>
-                <li>Sed non ipsum tristique justo lacinia imperdiet.</li>
-                <li>Praesent varius felis eget turpis dapibus accumsan.</li>
-            </ul>
-        </section>
+        <div id="mainDiv" class="row">
+            <!-- <div class="CVdiv" id="cvDiv"> -->
+                <section id="experiencia" class="col cv">
+                    <h3>Experiencia</h3>
+                        <h4 class="h6">Lorem ipsum</h4>
+                        <p>Ut aliquam sem ac odio sollicitudin luctus. Duis non neque finibus, gravida odio non, eleifend metus. Proin molestie turpis cursus aliquam congue. </p>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amest, consectetur adipiscing elit.</li>
+                            <li>Proin vel arcu vitae ex tincidunt condimentum.</li>
+                            <li>Curabitur suscipit neque sed urna pellentesque dictum.</li>
+                        </ul>
+                        <h4 class="h6">Phasellus arcu.</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus libero ac accumsan gravida. Ut cursus dignissim magna, nec elementum lectus gravida sed. </p>
+                        <ul>    
+                            <li>Proin viverra leo vitae sem finibus fringilla.</li>
+                            <li>Nulla faucibus odio sed sapien dignissim tempor.</li>
+                            <li>Donec tristique libero ut nulla aliquam, sit amet sagittis lacus tempus.</li>
+                        </ul>
+                    </section>
 
-        <section id="educacion" class="col">
-            <h3>Educación</h3>
-            <h4 class="h6">Nulla faucibus</h4>
-            <p>Ut aliquam sem ac odio sollicitudin luctus. Duis non neque finibus, gravida odio non, eleifend metus. Proin molestie turpis cursus aliquam congue. </p>
-            <ul>
-                <li>Vivamus id nulla et nunc gravida lacinia.</li>
-                <li>Mauris et nunc elementum, commodo leo in, lobortis orci.</li>
-                <li>Fusce et purus sed dui commodo sagittis eu sit amet libero.</li>
-            </ul>
-        </section>
-            
-        <section id="contacto" class="col">
-            <h3>Información de contacto</h3>
-            <p>e-mail: <br> lena.hanson@example.com</p>
-            <p>Telefono: <br> (284) 473-6994</p>
-            <p>Dirección: <br> 1561 E Center St</p>
-        </section>
-    </div>
+                    <section id="habilidades" class="col cv" >
+                    <h3>Habilidades</h3>
+                    <h4 class="h6">Elementum lorem vulputate.</h4>
+                    <p>Nunc ultricies vehicula luctus. Integer lacus enim, suscipit eget tincidunt vitae, posuere id enim cras.</p>
+                    <ul>
+                        <li>Quisque id felis ut justo tincidunt blandit id a neque.</li>
+                        <li>Maecenas et augue vitae magna iaculis cursus.</li>
+                        <li>Etiam congue tellus eget nibh semper ullamcorper.</li>
+                    </ul>
+                    <h4 class="h6">Aliquam</h4>
+                    <p>Proin at nulla quis nibh tristique molestie at cursus ante. Morbi semper.</p>
+                    <ul>
+                        <li>Sed non ipsum tristique justo lacinia imperdiet.</li>
+                        <li>Praesent varius felis eget turpis dapibus accumsan.</li>
+                    </ul>
+                </section>
+            <!-- </div> -->
+            <div class="CVdiv col-md-4"> 
+                
+                <section id="educacion" class="row">
+                    <h3>Educación</h3>
+                    <h4 class="h6">Nulla faucibus</h4>
+                    <p>Ut aliquam sem ac odio sollicitudin luctus. Duis non neque finibus, gravida odio non, eleifend metus. Proin molestie turpis cursus aliquam congue. </p>
+                    <ul>
+                        <li>Vivamus id nulla et nunc gravida lacinia.</li>
+                        <li>Mauris et nunc elementum, commodo leo in, lobortis orci.</li>
+                        <li>Fusce et purus sed dui commodo sagittis eu sit amet libero.</li>
+                    </ul>
+                </section>
+                
+                <section id="contacto" class="row">
+                    <h3>Información de contacto</h3>
+                    <p>e-mail: <br> lena.hanson@example.com</p>
+                    <p>Telefono: <br> (284) 473-6994</p>
+                    <address>Dirección: <br> 1561 E Center St</address>
+                </section>
+
+                
+            </div>
+        </div>
     </main>
 
     <div id="formulario">
