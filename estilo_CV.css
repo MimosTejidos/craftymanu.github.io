@@ -38,10 +38,71 @@ p, ul {
     list-style-type: disclosure-closed;
 }
 
-/* fin de estilos generales */
+
 body {
     background-color: whitesmoke;
     color: #002c41;
+}
+
+header {
+    background-color: #f39f33;
+    color: #002c41; 
+}
+
+footer  {
+    background-color: #f39f33;
+    color: #002c41;
+}
+
+.centrar {
+    text-align: center;
+}
+/* fin de estilos generales */
+
+/* inicio del menu: */
+#dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    width: fit-content;
+    background-color: #f39f33;
+    color: #002c41; 
+}
+
+.contenido-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f6b23bff;
+    /* min-width: 160px; */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    margin-left: 2.5rem;
+}
+
+#dropdown a {
+    color: #002c41ff;
+    text-decoration-line: none;
+}
+
+.dropbtn:hover {
+    background-color: #f6b23bff;
+}
+
+#dropdown:hover .contenido-dropdown {
+    display: block;
+}
+/* fin del menu */
+
+section {
+    padding: 1.5vh 1vw;
+}
+
+#persona {
+    background-color: #002c41;
+    color: whitesmoke;
 }
 
 #p-img {
@@ -54,31 +115,94 @@ body {
     flex-direction: column;
     justify-content: center;
 }
-#navbar {
-    background-color: #f39f33;
-    color: #002c41;
-}
-#navbar ul {
-    list-style: none;
-}
-#navbar ul li {
-    display: inline;
-}
-
-section {
-    padding: 1.5vh 1vw;
-}
 
 
-#persona {
-    background-color: #002c41;
-    color: whitesmoke;
-}
-
-
-#mainDiv {
+#CV {
     display: block;
 }
+#univDiv {
+    width: inherit;
+}
+
+#universidad {
+    width: inherit;
+    padding: 15%;
+    margin-top: 5%;
+}
+
+/* inicio formulario  */
+#formulario {
+    padding: 0.5rem;
+}
+fieldset {
+    padding: 10rem 0;
+}
+fieldset:not(:last-of-type) {
+    border-bottom: 2px solid rgba(151, 145, 134, 0.477);
+}
+
+label {
+    display: block; /* no funciona debido a bootstrap */
+    text-align: left;
+    margin: 0.5rem 0;
+}
+
+input {
+    width: fit-content;
+    max-width: 95vw;
+    text-align: left;
+}
+.textarea {
+    display: block;
+    text-align: center;
+}
+#textarea {
+    width: 92vw;
+    height: 5rem;
+    text-align: center;
+}
+
+.text-input {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    border: 1px solid #f6b23bff;
+    border-radius: 0.375rem;
+    margin-top: 0.25rem;
+}
+
+.radio-input {
+    display: block;
+}
+
+
+
+.boton {
+    border-radius: 0.375rem;
+    border: 3px solid #f6b23bff;
+    background-color: #f39f33ff;
+    color: #002c41ff;
+    font-size:larger;
+    font-weight: 500;
+    margin: 0.75rem;
+}
+
+.boton:hover {
+    background-color: #f6b23bff;
+}
+
+span {
+    font-weight: 600;
+}
+
+#contacto {
+    padding-top: 0.75rem;
+}
+
+
 
 
 /* Inicio de media query */
@@ -105,6 +229,18 @@ section {
     #nombre {
         width: 100vw;
     }
+    #univDiv {
+        display: flex;
+        justify-content: center;
+    }
+    #universidad {
+        padding: 1rem;
+        width: 30vh;
+        margin-top: 5%;
+    }
+    footer {
+        flex-wrap: wrap;
+    }
     
 }
 
@@ -120,6 +256,9 @@ section {
     }
     #nombre {
         width: 75vw;
+    }
+    #universidad {
+        margin-top: 5%;
     }
 }
 
@@ -137,7 +276,7 @@ section {
     #nombre {
         width: 75vw;
     }
-    #mainDiv {
+    #CV {
         display: flex;
         flex-direction: row-reverse;
         flex-wrap: wrap-reverse;
@@ -158,11 +297,6 @@ section {
         /* max-width: 25%; */
         max-width: 40%;
     }
-    #contacto {
-        background-color: #f39f33;
-        color: #002c41;
-    }
-}
 
 
 
@@ -173,9 +307,13 @@ section {
 
 
 /* para eliminar al finalizar */
-div {
+/* div {
     border: 2px solid green;
-}
+} */
 section {
     border: 1px solid blue;
+}
+
+li {
+    border:1px solid yellow
 }

@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="estilo_CV.css">
-    <!-- Boopstrap --> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Boopstrap --> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto:wght@300&display=swap" rel="stylesheet">    <title>CV</title>
+    <script src="script_CV.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -15,39 +19,46 @@
             <div id="logo" class="col-2">
                 <img src="" alt="logo">
             </div>
-            <nav id="navbar" class="col">
-                <ul>
-                    <li><a href="#Nombre">Nombre</a></li>
-                    <li><a href="#mainDiv">CV</a></li>
-                    <li><a href="#formulario">Contacto</a></li>
-                </ul>
-            </nav>
+            <div id="divNav" class="col container fluid">
+                <nav id="navbar" >
+                   
+                    <div id="dropdown">
+                        <button class="dropbtn">CV</button>
+                        <div class="contenido-dropdown">
+                            <a href="#experiencia" class="h4">Experiencia</a>
+                            <a href="#habilidades" class="h4">Habilidades</a>
+                            <a href="#educacion" class="h4">Educación</a>
+                            <a href="#contacto" class="h4">Contacto</a>
+                        </div>
+                    </div>
+                    
+                </nav>
+            </div>
         </div>
     </header>
 
     <div id="persona">
         <div id="divFoto" class="col-md-4">
-            <img id="p-img" src="https://randomuser.me/api/portraits/women/79.jpg" alt="foto de perfil de Lena Hanson">
         </div>
         <div id="nombre">
-            <h1>Lena Hanson</h1>
+            <h1 class="display-1" id="obj-name">Lena Hanson</h1>
             <h2>Título</h2>
         </div>
     </div>
 
     <main>
-        <div id="mainDiv" class="row">
-            <!-- <div class="CVdiv" id="cvDiv"> -->
+        <div id="CV" class="row">
+            
                 <section id="experiencia" class="col cv">
                     <h3>Experiencia</h3>
-                        <h4 class="h6">Lorem ipsum</h4>
+                        <h4 class="fs-6">Lorem ipsum</h4>
                         <p>Ut aliquam sem ac odio sollicitudin luctus. Duis non neque finibus, gravida odio non, eleifend metus. Proin molestie turpis cursus aliquam congue. </p>
                         <ul>
                             <li>Lorem ipsum dolor sit amest, consectetur adipiscing elit.</li>
                             <li>Proin vel arcu vitae ex tincidunt condimentum.</li>
                             <li>Curabitur suscipit neque sed urna pellentesque dictum.</li>
                         </ul>
-                        <h4 class="h6">Phasellus arcu.</h4>
+                        <h4 class="fs-6">Phasellus arcu.</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus libero ac accumsan gravida. Ut cursus dignissim magna, nec elementum lectus gravida sed. </p>
                         <ul>    
                             <li>Proin viverra leo vitae sem finibus fringilla.</li>
@@ -58,53 +69,104 @@
 
                     <section id="habilidades" class="col cv" >
                     <h3>Habilidades</h3>
-                    <h4 class="h6">Elementum lorem vulputate.</h4>
+                    <h4 class="fs-6">Elementum lorem vulputate.</h4>
                     <p>Nunc ultricies vehicula luctus. Integer lacus enim, suscipit eget tincidunt vitae, posuere id enim cras.</p>
                     <ul>
                         <li>Quisque id felis ut justo tincidunt blandit id a neque.</li>
                         <li>Maecenas et augue vitae magna iaculis cursus.</li>
                         <li>Etiam congue tellus eget nibh semper ullamcorper.</li>
                     </ul>
-                    <h4 class="h6">Aliquam</h4>
+                    <h4 class="fs-6">Aliquam</h4>
                     <p>Proin at nulla quis nibh tristique molestie at cursus ante. Morbi semper.</p>
                     <ul>
                         <li>Sed non ipsum tristique justo lacinia imperdiet.</li>
                         <li>Praesent varius felis eget turpis dapibus accumsan.</li>
                     </ul>
                 </section>
-            <!-- </div> -->
-            <div class="CVdiv col-md-4"> 
                 
-                <section id="educacion" class="row">
+                <section id="educacion" class="col cv">
                     <h3>Educación</h3>
-                    <h4 class="h6">Nulla faucibus</h4>
+                    <h4 class="fs-6">Nulla faucibus</h4>
                     <p>Ut aliquam sem ac odio sollicitudin luctus. Duis non neque finibus, gravida odio non, eleifend metus. Proin molestie turpis cursus aliquam congue. </p>
                     <ul>
                         <li>Vivamus id nulla et nunc gravida lacinia.</li>
                         <li>Mauris et nunc elementum, commodo leo in, lobortis orci.</li>
                         <li>Fusce et purus sed dui commodo sagittis eu sit amet libero.</li>
                     </ul>
-                </section>
+                    <div id="univDiv">
+                        <img id="universidad" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Harvard_Crimson_logo.svg/868px-Harvard_Crimson_logo.svg.png" alt="logo de la universidad de Harvard">
+                    </div>
+                </section>                  
                 
-                <section id="contacto" class="row">
-                    <h3>Información de contacto</h3>
-                    <p>e-mail: <br> lena.hanson@example.com</p>
-                    <p>Telefono: <br> (284) 473-6994</p>
-                    <address>Dirección: <br> 1561 E Center St</address>
-                </section>
-
-                
-            </div>
+            
         </div>
     </main>
 
     <div id="formulario">
-        <form action=""></form>
+        <form action="">
+            <div class="row">
+            <fieldset class="col col-md-3" style="border: 1px solid blue">
+                <label for="nombre">Nombre:
+                    <input type="text" name="nombre" id="name" required placeholder="Escriba su nombre" class="text-input">
+                </label>
+                <label for="apellido">Apellido:
+                    <input type="text" name="apellido" id="apellido" required placeholder="Escriba su apellido" class="text-input">
+                </label>
+                <label for="email">Email:
+                    <input type="email" name="email" id="email" required placeholder="Ingrese su e-mail" class="text-input">
+                </label>
+            </fieldset>
+            <fieldset class="col">
+                <p class="form-label">¿Quién desea contactarse es una persona particular o una empresa/organización?</p>
+                <label for="particular" class="radio-input"> 
+                    <input type="radio" name="contacto" id="particular" > Persona particular 
+                </label>
+                <label for="empresa" class="radio-input">
+                    <input type="radio" name="contacto" id="empresa" checked> Empresa/Organización 
+                </label>
+                <div>
+                    <label for="url">Página web:
+                        <input type="url" name="url" id="url" placeholder="www.ejemplo.com" >
+                    </label>
+                </div>
+            </div>
+                <div class="row container-fluid" >
+                    <p>Dirección:</p>
+                    <div class="col-4">
+                        <input type="text" name="ciudad" id="ciudad" placeholder="Ciudad" class="text-input">
+                    </div>
+                    <div class="col">
+                        <input type="text" name="provincia" id="provincia" placeholder="Provincia" class="text-input">
+                    </div>
+                    <div class="col">
+                        <input type="number" name="CP" id="codigoPostal" placeholder="Código postal" min="1000" max="9999" class="text-input">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="textarea">
+                <label for="motivo" >Motivo de la consulta:
+                    <input type="textarea" name="motivo" id="textarea" class="text-input">
+                </label>
+            </fieldset>
+            <div class="centrar">
+                <input type="submit" value="Submit" class="boton"/>
+            </div>
+            
+        </form>
+        
+        <!-- hacer validacion por js para ver si esta en condiciones de ser enviado al supuesto servidor back end -->
+        <!-- que cuando el usuario salta de un campo al otro se lo valide y si está bien se lo pinte de verde -->
     </div>
 
-    <footer>
-
+    <footer class="container-fluid">
+        <h3 id="contacto">Información de contacto</h3>
+        <div class="row container-fluid">
+            <div class="col-md-4" id="p-email"></div>
+            <div class="col-md-4" id="p-phone"></div>
+            <div class="col-md-4" id="p-adress"></div>
+        </div>
     </footer>
+    <div id="mapa"></div>
     
 </body>
 </html>
