@@ -59,7 +59,7 @@ function fetchData (url) {
         return data.results[0].location.postcode
       })
 
-      document.querySelector('#p-adress').innerHTML = '<p> <span> Dirección: </span> <br>' + calle_nombre + " " + calle_nro + ", " + ciudad + ", " + pais + ". <br> CP:" + codigo_postal + '</p>';
+      document.querySelector('#p-adress').innerHTML = '<p> <span> Dirección: </span> <br>' + calle_nombre + " " + calle_nro + ", " + ciudad + ", " + pais + ". CP:" + codigo_postal + '</p>';
 
       
       

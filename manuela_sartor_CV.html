@@ -16,14 +16,12 @@
 <body>
     <header>
         <div class="row">
-            <div id="logo" class="col-2">
-                <img src="" alt="logo">
-            </div>
+            
             <div id="divNav" class="col container fluid">
                 <nav id="navbar" >
                    
                     <div id="dropdown">
-                        <button class="dropbtn">CV</button>
+                        <button class="dropbtn">Menu</button>
                         <div class="contenido-dropdown">
                             <a href="#experiencia" class="h4">Experiencia</a>
                             <a href="#habilidades" class="h4">Habilidades</a>
@@ -33,6 +31,13 @@
                     </div>
                     
                 </nav>
+            </div>
+            <div id="logo" class="col-4">
+                <!-- <img src="https://img.freepik.com/psd-gratis/maqueta-logotipo-3d-translucido_125540-1859.jpg?w=2000" alt="logo"> -->
+                <!-- <img src="https://img.freepik.com/psd-gratis/maqueta-logotipo-3d-translucido_125540-1859.jpg?w=2000" alt="logo"> -->
+
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Red_Espresso_Logo.png" alt="logo">
+                
             </div>
         </div>
     </header>
@@ -85,17 +90,23 @@
                 </section>
                 
                 <section id="educacion" class="col cv">
-                    <h3>Educación</h3>
-                    <h4 class="fs-6">Nulla faucibus</h4>
-                    <p>Ut aliquam sem ac odio sollicitudin luctus. Duis non neque finibus, gravida odio non, eleifend metus. Proin molestie turpis cursus aliquam congue. </p>
-                    <ul>
-                        <li>Vivamus id nulla et nunc gravida lacinia.</li>
-                        <li>Mauris et nunc elementum, commodo leo in, lobortis orci.</li>
-                        <li>Fusce et purus sed dui commodo sagittis eu sit amet libero.</li>
-                    </ul>
-                    <div id="univDiv">
+                    <div id="divEducacion">
+                       
+                            <h3>Educación</h3>
+                            <h4 class="fs-6">Nulla faucibus</h4>
+                            <p>Ut aliquam sem ac odio sollicitudin luctus. Duis non neque finibus, gravida odio non, eleifend metus. Proin molestie turpis cursus aliquam congue. </p>
+                            <ul>
+                                <li>Vivamus id nulla et nunc gravida lacinia.</li>
+                                <li>Mauris et nunc elementum, commodo leo in, lobortis orci.</li>
+                                <li>Fusce et purus sed dui commodo sagittis eu sit amet libero.</li>
+                            </ul>
+                        </div>
+                        
+                   
+                    <div id="univDiv" >
                         <img id="universidad" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Harvard_Crimson_logo.svg/868px-Harvard_Crimson_logo.svg.png" alt="logo de la universidad de Harvard">
-                    </div>
+                    </div> 
+                    
                 </section>                  
                 
             
@@ -105,7 +116,7 @@
     <div id="formulario">
         <form action="">
             <div class="row">
-            <fieldset class="col col-md-3" style="border: 1px solid blue">
+            <fieldset class="col col-md-3">
                 <label for="nombre">Nombre:
                     <input type="text" name="nombre" id="name" required placeholder="Escriba su nombre" class="text-input">
                 </label>
@@ -158,8 +169,9 @@
         <!-- que cuando el usuario salta de un campo al otro se lo valide y si está bien se lo pinte de verde -->
     </div>
 
-    <footer class="container-fluid">
-        <h3 id="contacto">Información de contacto</h3>
+    <footer class="container-fluid ">
+        <div class="contacto"><h3 id="contacto">Información de contacto</h3></div>
+        
         <div class="row container-fluid">
             <div class="col-md-4" id="p-email"></div>
             <div class="col-md-4" id="p-phone"></div>
