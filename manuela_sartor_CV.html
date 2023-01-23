@@ -33,11 +33,7 @@
                 </nav>
             </div>
             <div id="logo" class="col-4">
-                <!-- <img src="https://img.freepik.com/psd-gratis/maqueta-logotipo-3d-translucido_125540-1859.jpg?w=2000" alt="logo"> -->
-                <!-- <img src="https://img.freepik.com/psd-gratis/maqueta-logotipo-3d-translucido_125540-1859.jpg?w=2000" alt="logo"> -->
-
                 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Red_Espresso_Logo.png" alt="logo">
-                
             </div>
         </div>
     </header>
@@ -45,9 +41,9 @@
     <div id="persona">
         <div id="divFoto" class="col-md-4">
         </div>
-        <div id="nombre">
-            <h1 class="display-1" id="obj-name">Lena Hanson</h1>
-            <h2>Título</h2>
+        <div id="nombrePersona">
+            <h1 class="display-1" id="obj-name">Nombre Apellido</h1>
+            <h2 id="titulo">Título</h2>
         </div>
     </div>
 
@@ -91,7 +87,6 @@
                 
                 <section id="educacion" class="col cv">
                     <div id="divEducacion">
-                       
                             <h3>Educación</h3>
                             <h4 class="fs-6">Nulla faucibus</h4>
                             <p>Ut aliquam sem ac odio sollicitudin luctus. Duis non neque finibus, gravida odio non, eleifend metus. Proin molestie turpis cursus aliquam congue. </p>
@@ -100,9 +95,7 @@
                                 <li>Mauris et nunc elementum, commodo leo in, lobortis orci.</li>
                                 <li>Fusce et purus sed dui commodo sagittis eu sit amet libero.</li>
                             </ul>
-                        </div>
-                        
-                   
+                    </div>  
                     <div id="univDiv" >
                         <img id="universidad" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Harvard_Crimson_logo.svg/868px-Harvard_Crimson_logo.svg.png" alt="logo de la universidad de Harvard">
                     </div> 
@@ -114,11 +107,11 @@
     </main>
 
     <div id="formulario">
-        <form action="">
+        <form action="" autocomplete="on" target="_blank">
             <div class="row">
             <fieldset class="col col-md-3">
                 <label for="nombre">Nombre:
-                    <input type="text" name="nombre" id="name" required placeholder="Escriba su nombre" class="text-input">
+                    <input type="text" name="nombre" id="nombre" required placeholder="Escriba su nombre" class="text-input">
                 </label>
                 <label for="apellido">Apellido:
                     <input type="text" name="apellido" id="apellido" required placeholder="Escriba su apellido" class="text-input">
@@ -140,9 +133,11 @@
                         <input type="url" name="url" id="url" placeholder="www.ejemplo.com" >
                     </label>
                 </div>
+            </fieldset>
             </div>
+            <fieldset>
                 <div class="row container-fluid" >
-                    <p>Dirección:</p>
+                    <p class="form-label centrar">Dirección:</p>
                     <div class="col-4">
                         <input type="text" name="ciudad" id="ciudad" placeholder="Ciudad" class="text-input">
                     </div>
@@ -156,11 +151,12 @@
             </fieldset>
             <fieldset class="textarea">
                 <label for="motivo" >Motivo de la consulta:
-                    <input type="textarea" name="motivo" id="textarea" class="text-input">
+                    <input type="textarea" name="motivo" id="motivo" class="text-input">
                 </label>
             </fieldset>
             <div class="centrar">
-                <input type="submit" value="Submit" class="boton"/>
+                <!-- <input type="submit" value="Submit" class="boton" id="enviar"/> -->
+                <button class="boton" id="enviar" formnovalidate>Enviar</button>
             </div>
             
         </form>
