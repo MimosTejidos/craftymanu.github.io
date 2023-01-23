@@ -7,75 +7,92 @@ function init () {
 
 
 
-  
-//  document.getElementById('enviar').addEventListener('click', localStorage);
+//  document.getElementById('enviar').addEventListener('click', mostrar_localStorage);
+document.getElementById('nombre').addEventListener('focusout', localStorage_nombre);
+document.getElementById('apellido').addEventListener('focusout', localStorage_apellido);
+document.getElementById('email').addEventListener('focusout', localStorage_email);
+document.getElementById('url').addEventListener('focusout', localStorage_url);
+document.getElementById('ciudad').addEventListener('focusout', localStorage_ciudad);
+document.getElementById('provincia').addEventListener('focusout', localStorage_provincia);
+document.getElementById('codigoPostal').addEventListener('focusout', localStorage_codigoPostal);
+document.getElementById('motivo').addEventListener('focusout', localStorage_motivoConsulta);
+
 }
 
 
+function localStorage_nombre() {
+  if (localStorage.nombre) {
+    console.log('Nombre guardado: ' + localStorage.nombre);
+  } else {
+    const nombre = document.getElementById("nombre").value;
+    localStorage.nombre = nombre;
+    console.log('Nombre: ' + localStorage.nombre);
+  }
+}
 
+function localStorage_apellido () {
+  if (localStorage.apellido) {
+    console.log('Apellido guardado: ' + localStorage.apellido);
+  } else {
+    const apellido = document.getElementById("apellido").value
+    localStorage.apellido = apellido;
+    console.log('Apellido: ' + localStorage.apellido);
+  }
+}
 
-
- /*function localStorage () {
-  console.log('Inicio de la función localStorage');
-  
-    if (localStorage.nombre) {
-      console.log('Nombre guardado: ' + localStorage.nombre);
-    } else {
-      const nombre = document.getElementById("nombre").value;
-      localStorage.nombre = nombre;
-      console.log('Nombre: ' + localStorage.nombre);
-    }
-  
-  
-    if (localStorage.apellido) {
-      console.log('Apellido guardado: ' + localStorage.apellido);
-    } else {
-      const apellido = document.getElementById("apellido").value
-      localStorage.apellido = apellido;
-      console.log('Apellido: ' + localStorage.apellido);
-    }
-  
-  
+function localStorage_email () {
   if (localStorage.email) {
     console.log('email guardado: ' + localStorage.email);
   } else {
     localStorage.email = document.getElementById("email").value;
     console.log('email: ' + localStorage.email);
   }
+}
+
+function localStorage_url () {
   if (localStorage.web) {
     console.log('url guardada: ' + localStorage.url);
   } else {
     localStorage.url = document.getElementById("url").value;
     console.log('url : ' + localStorage.url);
   }
+}
+
+function localStorage_ciudad () {
   if (localStorage.ciudad) {
     console.log('ciudad guardado: ' + localStorage.ciudad);
   } else {
     localStorage.ciudad = document.getElementById("ciudad").value;
     console.log('ciudad: ' + localStorage.ciudad);
   }
+}
+
+function localStorage_provincia () {
   if (localStorage.provincia) {
     console.log('Provincia guardada: ' + localStorage.provincia);
   } else {
     localStorage.provincia = document.getElementById("provincia").value;
     console.log('Provincia: ' + localStorage.provincia);
   }
+}
+
+function localStorage_codigoPostal () {
   if (localStorage.codigo) {
     console.log('CP guardado: ' + localStorage.codigo);
   } else {
     localStorage.codigo = document.getElementById("codigoPostal").value;
     console.log('CP: ' + localStorage.codigo);
   }
+}
+
+function localStorage_motivoConsulta () {
   if (localStorage.motivoConsulta) {
     console.log('motivo consulta guardado: ' + localStorage.motivoConsulta);
   } else {
     localStorage.motivoConsulta = document.getElementById("motivo").value;
     console.log('motivo consulta: ' + localStorage.motivoConsulta);
   }
-  
-} 
-*/
-
+}
 
  
 function fetchData (url) { //traer los datos del CV de la persona de la API (de la url definida como constante en la función init) y mostrarlos en el HTML.
