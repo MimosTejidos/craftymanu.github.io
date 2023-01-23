@@ -347,7 +347,9 @@ span {
 
 /* Fin de media query */
 
-
+#map {
+    height: 300px;
+}
 
 
 
