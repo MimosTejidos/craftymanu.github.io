@@ -13,11 +13,6 @@ function init () {
     document.getElementById('codigoPostal').addEventListener('focusout', localStorage_codigoPostal);
     document.getElementById('motivo').addEventListener('focusout', localStorage_motivoConsulta);
  }
-
-
-
-
-
  
 function fetchData (url) { //traer los datos del CV de la persona de la API (de la url definida como constante en la función init) y mostrarlos en el HTML.
   console.log('start fetch');
@@ -78,7 +73,6 @@ function fetchData (url) { //traer los datos del CV de la persona de la API (de 
     console.log(error);
   })
   } 
-
 
   function crearTitulo () {
     // arrays para randomizar el título universitario del CV de la persona:
@@ -173,7 +167,7 @@ function localStorage_motivoConsulta () {
   
 
 
-// Get current position successfully
+
 function geolocalizacionCV (latitudCV, longitudCV) {
   console.log('latitudCV: ' + latitudCV + ", longitudCV: " + longitudCV);
   console.log('typeoff latitudCV = ' + typeof(latitudCV) );
@@ -185,12 +179,18 @@ function geolocalizacionCV (latitudCV, longitudCV) {
   console.log('typeoff long = ' + typeof(long) );
   console.log(long);
 
+  console.log('ADVERTENCIA: las coordenadas provistas por la API randomuser no concuerdan con la dirección');
+
 	const map = L.map('map').setView([lat, long], 13); // las coordenadas provistas por la API no concuerdan con el país.
 
   var marker = L.marker([lat, long]).addTo(map);
 
   const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	 	maxZoom: 19,
+	  maxZoom: 2,
 	 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	 }).addTo(map);
-}
+
+   marker.bindPopup("<b>Advertencia!</b><br>Las dirección de contacto puede no coincidir con el mapa.").openPopup();
+} 
+
+
