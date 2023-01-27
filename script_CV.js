@@ -1,18 +1,23 @@
 window.onload = init;
 
 function init () {
-    const user_url = 'https://randomuser.me/api/?exc=login,registered,id';
-    fetchData (user_url);
-    crearTitulo ();
-    document.getElementById('nombre').addEventListener('focusout', localStorage_nombre);
-    document.getElementById('apellido').addEventListener('focusout', localStorage_apellido);
-    document.getElementById('email').addEventListener('focusout', localStorage_email);
-    document.getElementById('url').addEventListener('focusout', localStorage_url);
-    document.getElementById('ciudad').addEventListener('focusout', localStorage_ciudad);
-    document.getElementById('provincia').addEventListener('focusout', localStorage_provincia);
-    document.getElementById('codigoPostal').addEventListener('focusout', localStorage_codigoPostal);
-    document.getElementById('motivo').addEventListener('focusout', localStorage_motivoConsulta);
- }
+  const user_url = 'https://randomuser.me/api/?exc=login,registered,id';
+  fetchData (user_url);
+  crearTitulo ();
+  document.getElementById('nombre').addEventListener('focusout', localStorage_nombre);
+  document.getElementById('apellido').addEventListener('focusout', localStorage_apellido);
+  document.getElementById('email').addEventListener('focusout', localStorage_email);
+  document.getElementById('url').addEventListener('focusout', localStorage_url);
+  document.getElementById('ciudad').addEventListener('focusout', localStorage_ciudad);
+  document.getElementById('provincia').addEventListener('focusout', localStorage_provincia);
+  document.getElementById('codigoPostal').addEventListener('focusout', localStorage_codigoPostal);
+  document.getElementById('motivo').addEventListener('focusout', localStorage_motivoConsulta);
+}
+
+function mostrarPosicionUsuario (lat, long) {
+  const map = L.map('map').setView([lat, long], 13); // las coordenadas de la ubicacion del usuario.
+  var marker = L.marker([lat, long]).addTo(map);
+}
  
 function fetchData (url) { //traer los datos del CV de la persona de la API (de la url definida como constante en la función init) y mostrarlos en el HTML.
   console.log('start fetch');
@@ -163,10 +168,7 @@ function localStorage_motivoConsulta () {
   }
 }
  
-// ----
-  
-
-
+// ---- Mapa ----
 
 function geolocalizacionCV (latitudCV, longitudCV) {
   console.log('latitudCV: ' + latitudCV + ", longitudCV: " + longitudCV);
@@ -186,11 +188,11 @@ function geolocalizacionCV (latitudCV, longitudCV) {
   var marker = L.marker([lat, long]).addTo(map);
 
   const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	  maxZoom: 2,
+	  maxZoom: 19,
 	 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	 }).addTo(map);
 
-   marker.bindPopup("<b>Advertencia!</b><br>Las dirección de contacto puede no coincidir con el mapa.").openPopup();
+   marker.bindPopup("<b>Advertencia!</b><br>Las dirección de contacto puede no coincidir con lo que ve en el mapa.").openPopup();
 } 
 
 

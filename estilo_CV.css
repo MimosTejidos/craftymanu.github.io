@@ -337,7 +337,6 @@ span {
         max-width: 40%;
     }
 
-
     .contacto {
         text-align: left;
         margin-bottom: 1rem;
@@ -347,8 +346,24 @@ span {
 
 /* Fin de media query */
 
-#map {
-    height: 300px;
+.map {
+    min-height: 250px;
+    max-height: 100vh;
+    margin-bottom: 1rem;
+}
+
+#geolocalizacion {
+    border: 2px solid var(--color1);
+    background-color: var(--color3);
+    color: var(--color1);
+    text-shadow: none;
+}
+
+#geolocalizacion:hover {
+    border-color: var(--color4);
+    background-color: var(--color5);
+    color: var(--color3);
+
 }
 
 
