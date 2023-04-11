@@ -1,0 +1,15 @@
+:root {
+    
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FBF7F7;
+}
+
+button {
+    background-color: antiquewhite;
+}
