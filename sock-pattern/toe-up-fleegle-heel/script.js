@@ -6,15 +6,32 @@ function init() {
     // disableInputFields();
     measuringSystemMenu.addEventListener('change', getMeasuringSystemChoice);
     resetButton.addEventListener('click', resetAll);
-    // darkLightModeButton = document.querySelector('#darkLightModeButton');
-    // darkLightModeButton.addEventListener('click', darkLightMode);
-    darkLightModeSwitch = document.querySelector('.switch');
-    darkLightModeSwitch.addEventListener('change', darkLightMode);
+
+
 //scroll to top button:
 topButton = document.querySelector('#topButton');
 topButton.addEventListener('click', topFunction);
+// Dark light themes:
+darkLightModeSwitch = document.querySelector('.switch');
+darkLightModeSwitch.addEventListener('change', darkLightMode);
+darkLightCheckbox = document.getElementById("light-dark-checkbox");
+// light/dark theme local storage:
+if (localStorage.theme) {
+    console.log('saved theme: ' + localStorage.theme);
+    if (localStorage.theme == "light-mode dark-mode") {
+        var newCheckbox = '<input type="checkbox" id="light-dark-checkbox" checked>'; //it can be anything
+        if(darkLightCheckbox.outerHTML) { //if outerHTML is supported
+        darkLightCheckbox.outerHTML = newCheckbox; 
+        console.log('checked')
+        darkLightMode();
+    }
+  } else {
+    const theme = darkLightCheckbox.value;
+    localStorage.theme = theme;
+    console.log('Theme: ' + localStorage.theme);
+  }
 
-// light/dark mode switch:}
+        
 } //end of init function 
 
 function resetAll() {
@@ -395,18 +412,36 @@ function topFunction() {
 function darkLightMode() {
 
     var element = document.body;
-    element.classList.toggle('dark-mode');
-    var elements = document.getElementsByClassName('light-mode');
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].classList.toggle('dark-mode');
-      }
-      var element = document.querySelector('footer');
-    element.classList.toggle('dark-mode');
+    
+        element.classList.toggle('dark-mode');
+        var elements = document.getElementsByClassName('light-mode');
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].classList.toggle('dark-mode');
+        }
+        var element = document.querySelector('footer');
+        if (localStorage.theme == "light-mode") {
+            element.classList.toggle('dark-mode');
+        }
+    
+        var lightSwitch = document.querySelector('#light');
+        var darkSwitch = document.querySelector('#dark');
+    
+        darkSwitch.classList.toggle('dark-selected');
+        lightSwitch.classList.toggle('light-selected');
+        storeDarkLightTheme()
+        
 
-    var lightSwitch = document.querySelector('#light');
-    var darkSwitch = document.querySelector('#dark');
-
-    darkSwitch.classList.toggle('dark-selected');
-    lightSwitch.classList.toggle('light-selected');
+        
+    
+    
   } //end of darkLightMode funtion
+
+  //saving dark-light theme user preference:
+   function storeDarkLightTheme() {
+         const theme = document.getElementById("mainDiv").className;
+         localStorage.theme = theme;
+         console.log('Theme: ' + localStorage.theme);
+        //  const x = document.getElementById('light-dark-checkbox').value
+        //  console.log('x: ' + x);
+   } //end of saving dark-light theme user preference
 

@@ -1,5 +1,5 @@
 :root {
-    
+    --light-background: #FBF7F7;
 }
 
 * {
@@ -7,9 +7,68 @@
 }
 
 body {
-    background-color: #FBF7F7;
+    background-color: var(--light-background);
 }
 
-button {
-    background-color: antiquewhite;
+h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:medium;
 }
+
+.background-img-div {
+    background: rgb(177, 230, 173) url(https://images4-f.ravelrycache.com/uploads/craftyManu/793978829/20210622_155527_medium.jpg) no-repeat center;
+    background-size: contain;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 400px; 
+    width: 450px;  
+}
+
+.semi-transparent-div {
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    margin: 30px;
+    font-weight: bold;
+}
+
+
+
+.row {
+    display: flex;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* grid display: */
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    /* border: 1px solid red; */
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}

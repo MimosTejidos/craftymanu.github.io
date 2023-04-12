@@ -1,3 +1,9 @@
+:root {
+  --light-background: #FBF7F7;
+  --soft-green: #B0C795;
+  --teal: #127475;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -7,12 +13,12 @@
 }
 
 body {
-    background-color: #FBF7F7;
+    background-color: var(--light-background);
 }
 
 h1, h2, legend {
     font-family: Verdana, sans-serif;
-    color: #127475;
+    color: var(--teal);
   }
 
 
@@ -22,7 +28,7 @@ h1 {
 }
 
 h2 {
-    border-top: 0.1em solid #B0C795;
+    border-top: 0.1em solid var(--soft-green);
     padding-top: 1rem;
     padding-left: 1rem;
     font-size: 0.85em;
@@ -76,7 +82,7 @@ div {
 }
 
 fieldset {
-   border: 0.1em solid #B0C795;
+   border: 0.1em solid var(--soft-green);
 }
 
 fieldset:not(:first-child) {
@@ -127,8 +133,8 @@ button {
     flex-wrap: wrap;
     font-size: 1.8rem;
     color: #1d3557;
-    background-color: #B0C795;
-    border: 0.2rem solid #127475;
+    background-color: var(--soft-green);
+    border: 0.2rem solid var(--teal);
     border-radius: 4rem;
     padding: 0 0.8rem 0 0.8rem;
     column-span: 2;
@@ -138,7 +144,7 @@ button {
 }
 
 button:hover {
-background-color: #127475;
+background-color: var(--teal);
 color: white
 }
 #resetButton {
@@ -178,7 +184,7 @@ input:disabled {
 }
 
 select:disabled {
-    background-color: #B0C795;
+    background-color: var(--soft-green);
     color: #071324; 
     font-weight: bold;
 }
@@ -235,7 +241,7 @@ select:disabled {
   }
 
   footer {
-      background-color: #B0C795;
+      background-color: var(--soft-green);
       padding: 1rem;
       margin-bottom: 0.5rem;
     font-size: 1.15rem;
@@ -244,7 +250,7 @@ select:disabled {
   }
 
   .sockPattern {
-      border-top: 0.06rem dashed #B0C795;
+      border-top: 0.06rem dashed var(--soft-green);
   }
 
   h4 {
@@ -290,8 +296,8 @@ select:disabled {
   .topNav a:hover {
     color:#071324; 
     text-decoration: none;
-    background-color: #B0C795;
-    border-bottom: 3px solid #127475;
+    background-color: var(--soft-green);
+    border-bottom: 3px solid var(--teal);
   }
   
 
@@ -314,13 +320,13 @@ select:disabled {
 }
   
   #topButton:hover {
-    background-color: #127475;
+    background-color: var(--teal);
   }
   /* end of scroll to top button */
 
  button:focus, input:focus, select:focus, textarea:focus {
   box-shadow: none;
-  outline: #B0C795 dashed 0.15em;
+  outline: var(--soft-green) dashed 0.15em;
   outline-offset: .05em;
 }
 
@@ -400,11 +406,11 @@ input[type="text"], input[type="number"], select {
   }
   input:checked + .slider {
     /* background-color: #2196F3; */
-    background-color: #127475;
+    background-color: var(--teal);
   }
   input:focus + .slider {
     /* box-shadow: 0 0 1px #2196F3; */
-    box-shadow: 0 0 1px #127475;
+    box-shadow: 0 0 1px var(--teal);
   }
   input:checked + .slider:before {
     -webkit-transform: translateX(1.5em);
@@ -418,7 +424,7 @@ input[type="text"], input[type="number"], select {
   .slider.round:before {
     border-radius: 50%;
   }
-#light-switchDiv p {
+#lightSwitchDiv p {
     font-size: 0.5em;
     color:gray;
     font-weight: normal;
@@ -432,7 +438,7 @@ input[type="text"], input[type="number"], select {
     justify-content: space-between;
     }
 
-#light-switchDiv {
+#lightSwitchDiv {
     /* border: 1px solid red; */
     display: inline-flex;
     flex-direction: row;

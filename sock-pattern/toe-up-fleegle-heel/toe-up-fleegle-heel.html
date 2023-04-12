@@ -13,13 +13,13 @@
     <title>Toe-up Sock Pattern</title>
 </head>
 <body>
-    <div class="light-mode">
+    <div id="mainDiv" class="light-mode">
     <h1 class="light-mode">Toe Up (Fleegle Heel) Sock Pattern Generator</h1>
     <div class="topNav"></div>
     <div class="row">
         <div class="column" id="firstColumn">
     <section role="form">
-    <form action="" method="get"> <!--action="where to send the data to"-->
+    <form action="" method="get" autocomplete="on"> <!--action="where to send the data to"-->
         <fieldset class="CMorI">
             <legend>Choose between cm and inches</legend>
             <section role="region" aria-labelledby="measuring-system" id="topSection">
@@ -33,10 +33,10 @@
                     </select>
             </div>   
             <!-- Rounded switch -->
-            <div id="light-switchDiv">
+            <div id="lightSwitchDiv">
                 <p id="light" class="light-selected">Light Mode</p>
                 <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" id="light-dark-checkbox">
                     <span class="slider round"></span>
                 </label>
                 <p id="dark">Dark Mode</p>
