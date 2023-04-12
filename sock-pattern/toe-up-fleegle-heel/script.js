@@ -19,10 +19,12 @@ darkLightCheckbox = document.getElementById("light-dark-checkbox");
 if (localStorage.theme) {
     console.log('saved theme: ' + localStorage.theme);
     if (localStorage.theme == "light-mode dark-mode") {
-        var newCheckbox = '<input type="checkbox" id="light-dark-checkbox" checked>'; //it can be anything
+        
+        var darkCheckbox = '<input type="checkbox" id="light-dark-checkbox" checked>'; //it can be anything
         if(darkLightCheckbox.outerHTML) { //if outerHTML is supported
-        darkLightCheckbox.outerHTML = newCheckbox; 
-        console.log('checked')
+        darkLightCheckbox.outerHTML = darkCheckbox; ///it's simple replacement of whole element with contents of str var
+        }
+        // console.log('checked')
         darkLightMode();
     }
   } else {
@@ -429,9 +431,6 @@ function darkLightMode() {
         darkSwitch.classList.toggle('dark-selected');
         lightSwitch.classList.toggle('light-selected');
         storeDarkLightTheme()
-        
-
-        
     
     
   } //end of darkLightMode funtion
@@ -441,7 +440,5 @@ function darkLightMode() {
          const theme = document.getElementById("mainDiv").className;
          localStorage.theme = theme;
          console.log('Theme: ' + localStorage.theme);
-        //  const x = document.getElementById('light-dark-checkbox').value
-        //  console.log('x: ' + x);
    } //end of saving dark-light theme user preference
 
