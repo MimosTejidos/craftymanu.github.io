@@ -409,7 +409,6 @@ input[type="text"], input[type="number"], select {
     background-color: var(--teal);
   }
   input:focus + .slider {
-    /* box-shadow: 0 0 1px #2196F3; */
     box-shadow: 0 0 1px var(--teal);
   }
   input:checked + .slider:before {
@@ -449,13 +448,7 @@ input[type="text"], input[type="number"], select {
 } 
 /* end of dark mode switch */ 
 
-/* .select-light {
- color: gray;
-}
 
-.select-dark {
-    color: gray; */
-/* } */
 .light-selected  {
     color:#071324 !important;
     font-weight: bold !important; 

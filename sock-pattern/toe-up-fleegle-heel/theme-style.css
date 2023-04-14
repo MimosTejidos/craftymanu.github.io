@@ -66,7 +66,7 @@
   }
 
 #lightSwitchDiv {
-    /* border: 1px solid red; */
+    /* border: 1px solid red;  */
     display: inline-flex;
     flex-direction: row;
     flex-wrap: nowrap; 
@@ -93,7 +93,7 @@
 
   /* dark mode style */
   body {
-    padding: 25px;
+    /* padding: 25px; */
     background-color: white;
     color: black;
     font-size: 25px;
@@ -113,3 +113,27 @@
     background-color: #1d3557;
   }
   /* end of dark mode style*/
+
+  .row {
+    display: flex;
+}
+
+label {
+  font-size: 1.05rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: monospace, Arial, Helvetica, sans-serif;
+} /* makes the switch button smaller and aligns the text*/
+
+body {
+  background-color: var(--light-background);
+  padding: 0;
+}
+
+.parent {
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem
+
+}

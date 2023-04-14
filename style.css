@@ -10,6 +10,7 @@
 
 body {
     background-color: var(--light-background);
+    padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -74,3 +75,27 @@ h1, h2, h3, h4, h5, h6 {
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
+
+.align-right {
+    justify-content: right;
+}
+
+.row {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.parent {
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem
+
+}
+
+body {
+    padding: 0;
+}
+
