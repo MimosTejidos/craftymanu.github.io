@@ -2,8 +2,8 @@ window.onload = initiation()
 
 function initiation() {
     // Dark light themes:
-    let darkLightModeSwitch = document.querySelector('.switch');
-    let darkLightCheckbox = document.getElementById("light-dark-checkbox");
+    const darkLightModeSwitch = document.querySelector('.switch');
+    const darkLightCheckbox = document.getElementById("light-dark-checkbox");
     darkLightModeSwitch.addEventListener('change', darkLightMode);
 
     // light/dark theme local storage:
@@ -28,7 +28,7 @@ function initiation() {
 // light/dark mode toggle:
 
 function darkLightMode() {
-
+    console.log('darkLightMode function EXECUTED');
     var element = document.body;
     
         element.classList.toggle('dark-mode');

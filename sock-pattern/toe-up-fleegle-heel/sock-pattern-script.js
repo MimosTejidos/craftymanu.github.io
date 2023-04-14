@@ -9,52 +9,32 @@ function init() {
 
 
   //scroll to top button:
-  topButton = document.querySelector('#topButton');
+  let topButton = document.querySelector('#topButton');
   topButton.addEventListener('click', topFunction);
-
-  // Dark light themes:
-  /*
-  let darkLightModeSwitch = document.querySelector('.switch');
-  darkLightModeSwitch.addEventListener('change', darkLightMode);
-  let darkLightCheckbox = document.getElementById("light-dark-checkbox");
-  
-  // light/dark theme local storage:
-  if (localStorage.theme) {
-      console.log('saved theme: ' + localStorage.theme);
-      if (localStorage.theme == "light-mode dark-mode") {
-          
-          var darkCheckbox = '<input type="checkbox" id="light-dark-checkbox" checked>'; //it can be anything
-          if(darkLightCheckbox.outerHTML) { //if outerHTML is supported
-          darkLightCheckbox.outerHTML = darkCheckbox; ///it's simple replacement of whole element with contents of str var
-          }
-          // console.log('checked')
-          darkLightMode();
-      }
-    } else {
-      const theme = darkLightCheckbox.value;
-      localStorage.theme = theme;
-      console.log('Theme: ' + localStorage.theme);
-    } */
-
-    //getting user stored values:
-    document.getElementById('measuring-system-selection').addEventListener('focusout', localStorage_measuringSystem);
+  //getting user stored values:
+  document.getElementById('measuring-system-selection').addEventListener('focusout', localStorage_measuringSystem);
     
 } // END of init function 
 
 function resetAll() {
+  if (topNav != undefined) {
     console.log('topNav: ' + topNav);
+    console.log('topNav.childElementCount: ' + topNav.childElementCount);
+    const topNava = document.querySelectorAll(".topNava");
+    console.log('topNava.length: ' + topNava.length);
+     for (let i = 0; i < topNava.length; i++) {
+        console.log('i: ' + i);
+        topNava[i].remove();
+     }
+    console.log('topNav: ' + topNav);
+    let writtenpattern = document.querySelector('#written-sock-pattern');
+    writtenpattern.remove();
+  }
     console.log('resetAll function EXECUTED');
     measuringSystemMenu.disabled = false;
     submitButton.disabled = true;
    
-console.log('topNav.childElementCount: ' + topNav.childElementCount);
-const topNava = document.querySelectorAll(".topNava");
-console.log('topNava.length: ' + topNava.length);
-     for (let i = 0; i < topNava.length; i++) {
-        console.log('i: ' + i);
-         topNava[i].remove();
-     }
-    console.log('topNav: ' + topNav);
+
 } // end of resetAll function
 
   function getMeasuringSystemChoice(){
@@ -116,7 +96,6 @@ function enableSwatchSize() {
 } //end of enableSwatchSize function
 
 function writeInputFields() {
-    document.getElementById('gaugeSts').addEventListener('focusout', localStorage_Sts); //// NOT WORKING
     measuringSystemMenu.disabled = true;
     gaugeSize = document.querySelector('#gaugeSize').value;
     gaugeStsLabel.innerHTML = '<input type="number" name="gaugeSts" id="gaugeSts" class="gaugeInfoInput" min="1" placeholder="sts" required> ' + ' sts in ' + gaugeSize + ' ' + measuringSystem + '.';
@@ -194,33 +173,37 @@ function checkAllFieldsHaveBeenFilled() {
 } // end of checkAllFieldsHaveBeenFilled
 
 function getSubmitedValues() {
-    console.log('Submit button fired');
-    console.log('getSubmitedValues function EXECUTED')
-    submitButton.disabled = true;
-    console.log('SubmitButton inside getSubmitedValues function, disabled?' + submitButton.disabled)
-    gaugeSize = document.querySelector('#gaugeSize').value;
-    gaugeSts = document.querySelector('#gaugeSts').value;
-    gaugeRows = document.querySelector('#gaugeRows').value;
-    // localStorage_Rows; //// NOT WORKING??
-    footLength = document.querySelector('#footLength').value;
-    footWidth = document.querySelector('#footWidth').value;
-    userNotes = document.querySelector('#userNotes').value;
-    document.querySelector('#buttonInstructions').innerHTML = "";
-    
-    seeSubmitedValues();
-      if (measuringSystem == "cm") {
-          measuringSystem = "cm";
-          console.log('this pattern will be in CM, from getSubmitedValues');
-        //   calculateInCm();
-        calculatePattern();
-      } else if (measuringSystem == "inches") {
-          measuringSystem = "inches"
-          console.log('this pattern will be in INCHES, from getSubmitedValues');
-        //  calculateInInches();
-         calculatePattern ()
-      }
-    disableInputFields();
-    //  seeSubmitedValues();
+  console.log('Submit button fired');
+  console.log('getSubmitedValues function EXECUTED')
+  submitButton.disabled = true;
+  console.log('SubmitButton inside getSubmitedValues function, disabled?' + submitButton.disabled)
+  gaugeSize = document.querySelector('#gaugeSize').value;
+  gaugeSts = document.querySelector('#gaugeSts').value;
+  gaugeRows = document.querySelector('#gaugeRows').value;
+  // localStorage_Rows; //// NOT WORKING??
+  footLength = document.querySelector('#footLength').value;
+  footWidth = document.querySelector('#footWidth').value;
+  userNotes = document.querySelector('#userNotes').value;
+  document.querySelector('#buttonInstructions').innerHTML = "";
+  // document.getElementById('gaugeSts').addEventListener('focusout', localStorage_Sts); //// NOT WORKING
+  localStorage_Sts //not working
+  localStorage_Rows //not working
+
+
+  seeSubmitedValues();
+    if (measuringSystem == "cm") {
+        measuringSystem = "cm";
+        console.log('this pattern will be in CM, from getSubmitedValues');
+      //   calculateInCm();
+      calculatePattern();
+    } else if (measuringSystem == "inches") {
+        measuringSystem = "inches"
+        console.log('this pattern will be in INCHES, from getSubmitedValues');
+      //  calculateInInches();
+        calculatePattern ()
+    }
+  disableInputFields();
+  //  seeSubmitedValues();
 } //enf of getSubmitedValues function
 
 function seeSubmitedValues() {
@@ -250,55 +233,61 @@ calculatePattern();
     //  if ((HALF_CO_sts % 4) !== 0) {
     //     HALF_CO_sts = HALF_CO_sts-1;
     // }
-     foot_sts = HALF_CO_sts * 4;
-     console.log("HALFCOsts: " + HALF_CO_sts );
-     if (foot_sts % 2 !== 0) {
-         foot_sts = Math.round(foot_sts)-1;
-     }
-     console.log("footSts: " + foot_sts);
-     CO_sts = HALF_CO_sts * 2;
-     HALF_foot_sts = foot_sts / 2;
-     console.log("HALFfootSts: " + HALF_foot_sts)
-     gusset_inc_sts = HALF_foot_sts - 2;
-     HALF_gusset_inc_sts = gusset_inc_sts / 2;
-     gusset_inc_rows = gusset_inc_sts;
-     if (measuringSystem == 'cm') {
-        total_foot_rows = ((footLength - (footLength*0.05)) * gaugeRows) / gaugeSize;
-        if (total_foot_rows % 1!== 0 ) {
-            total_foot_rows = Math.round(total_foot_rows)-1;
-        }
-     } else if (measuringSystem == 'inches') {
-        total_foot_rows = ((footLength - (footLength*0.05)) * gaugeRows) / gaugeSize;
-        if (total_foot_rows % 1!== 0 ) {
-            total_foot_rows = Math.ceil(total_foot_rows)-1;
-        }
-     }
-     foot_before_gusset_rows = total_foot_rows - gusset_inc_rows;
-     if (measuringSystem == 'cm') {
-         foot_before_gusset_cm = (foot_before_gusset_rows * gaugeSize) / gaugeRows;
-         if (foot_before_gusset_cm % 1 !== 0) {
-            foot_before_gusset_cm = Math.round(foot_before_gusset_cm);
-         }
-     } else if (measuringSystem == 'inches') {
-        console.log('stop 2 inches')
-         foot_before_gusset_inches = (foot_before_gusset_inches = (foot_before_gusset_rows * (gaugeSize)) / gaugeRows); 
-         if (foot_before_gusset_inches % 1 !== 0) {
-            foot_before_gusset_inches = Math.round(foot_before_gusset_inches);
-        }
+    if (HALF_CO_sts < 2) {
+      alert('The measurements are invalid, please try again.')
+      enableSwatchSize
+      enableInputFields
+    } else {foot_sts = HALF_CO_sts * 4;
+      console.log("HALFCOsts: " + HALF_CO_sts );
+      if (foot_sts % 2 !== 0) {
+          foot_sts = Math.round(foot_sts)-1;
       }
-      console.log('stop 3')
-     afterGussetHeelNeedleSts = HALF_foot_sts + gusset_inc_sts;
-     heelNeedleStMarker = afterGussetHeelNeedleSts / 2;
-     R1BackAndForth = heelNeedleStMarker + 2;
-     R1sts = R1BackAndForth + 2;
-     Rend_k_sts = heelNeedleStMarker - 1;
-     Rend_sts = R1BackAndForth;
-     R1HeelNeedle = Rend_sts;
-     R1InstepNeedle = Rend_sts-1;
-     R1BothNeedlesSts = R1HeelNeedle + R1InstepNeedle;
-     R2BothNeedlesSts = R1BothNeedlesSts - 2;
-     CuffRepeats = R2BothNeedlesSts / 4
-     writePattern();
+      console.log("footSts: " + foot_sts);
+      CO_sts = HALF_CO_sts * 2;
+      HALF_foot_sts = foot_sts / 2;
+      console.log("HALFfootSts: " + HALF_foot_sts)
+      gusset_inc_sts = HALF_foot_sts - 2;
+      HALF_gusset_inc_sts = gusset_inc_sts / 2;
+      gusset_inc_rows = gusset_inc_sts;
+      if (measuringSystem == 'cm') {
+         total_foot_rows = ((footLength - (footLength*0.05)) * gaugeRows) / gaugeSize;
+         if (total_foot_rows % 1!== 0 ) {
+             total_foot_rows = Math.round(total_foot_rows)-1;
+         }
+      } else if (measuringSystem == 'inches') {
+         total_foot_rows = ((footLength - (footLength*0.05)) * gaugeRows) / gaugeSize;
+         if (total_foot_rows % 1!== 0 ) {
+             total_foot_rows = Math.ceil(total_foot_rows)-1;
+         }
+      }
+      foot_before_gusset_rows = total_foot_rows - gusset_inc_rows;
+      if (measuringSystem == 'cm') {
+          foot_before_gusset_cm = (foot_before_gusset_rows * gaugeSize) / gaugeRows;
+          if (foot_before_gusset_cm % 1 !== 0) {
+             foot_before_gusset_cm = Math.round(foot_before_gusset_cm);
+          }
+      } else if (measuringSystem == 'inches') {
+         console.log('stop 2 inches')
+          foot_before_gusset_inches = (foot_before_gusset_inches = (foot_before_gusset_rows * (gaugeSize)) / gaugeRows); 
+          if (foot_before_gusset_inches % 1 !== 0) {
+             foot_before_gusset_inches = Math.round(foot_before_gusset_inches);
+         }
+       }
+       console.log('stop 3')
+      afterGussetHeelNeedleSts = HALF_foot_sts + gusset_inc_sts;
+      heelNeedleStMarker = afterGussetHeelNeedleSts / 2;
+      R1BackAndForth = heelNeedleStMarker + 2;
+      R1sts = R1BackAndForth + 2;
+      Rend_k_sts = heelNeedleStMarker - 1;
+      Rend_sts = R1BackAndForth;
+      R1HeelNeedle = Rend_sts;
+      R1InstepNeedle = Rend_sts-1;
+      R1BothNeedlesSts = R1HeelNeedle + R1InstepNeedle;
+      R2BothNeedlesSts = R1BothNeedlesSts - 2;
+      CuffRepeats = R2BothNeedlesSts / 4
+      writePattern();}
+
+     
  } // end of the calculateIn CM and Inches function
 
 
@@ -423,43 +412,6 @@ function topFunction() {
 }
 //end of scroll to top button
 
-// light/dark mode toggle:
-
- /*
- function darkLightMode() {
-
-    var element = document.body;
-    
-        element.classList.toggle('dark-mode');
-        var elements = document.getElementsByClassName('light-mode');
-        for (let i = 0; i < elements.length; i++) {
-            elements[i].classList.toggle('dark-mode');
-        }
-        var element = document.querySelector('footer');
-        if (localStorage.theme == "light-mode") {
-            element.classList.toggle('dark-mode');
-        }
-    
-        var lightSwitch = document.querySelector('#light');
-        var darkSwitch = document.querySelector('#dark');
-    
-        darkSwitch.classList.toggle('dark-selected');
-        lightSwitch.classList.toggle('light-selected');
-        storeDarkLightTheme()
-    
-    
-  } */ //end of darkLightMode funtion
-
-  //saving dark-light theme user preference:
-  /* 
-  function storeDarkLightTheme() {
-         const theme = document.getElementById("mainDiv").className;
-         localStorage.theme = theme;
-         console.log('Theme: ' + localStorage.theme);
-   } */
-   //end of saving dark-light theme user preference
-
-
 //storing user inputs:
    function localStorage_measuringSystem() {
     if (localStorage.measuringSystemPreference) {
@@ -484,11 +436,11 @@ function topFunction() {
   function localStorage_Sts() { //not working
     console.log('LOCAL STORAGE STS!!')
     if (localStorage.sts) {
-      console.log(`Sts: ${localStorage.sts} sts`);
+      console.log(`Local storage sts: ${localStorage.sts} sts`);
     } else {
       const localSts = document.getElementById("gaugeSts").value;
       localStorage.sts = localSts;
-      console.log(`Sts: ${localStorage.sts} sts`);
+      console.log(`local storage sts (new): ${localStorage.sts} sts`);
     }
   } 
 
@@ -498,7 +450,7 @@ function topFunction() {
     } else {
       const localRows = document.getElementById("gaugeRows").value;
       localStorage.sts = localRows;
-      console.log(`Rows (local storage): ${localStorage.sts} rows`);
+      console.log(`Rows (new local storage): ${localStorage.sts} rows`);
     }
   } 
   
