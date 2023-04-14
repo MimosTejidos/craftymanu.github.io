@@ -45,32 +45,32 @@
             </section>
         </fieldset>
 
-<fieldset>
+<fieldset id="gauge-fieldset">
     <legend> Gauge Information</legend>
     <section role="region" aria-labelledby="gauge-information">
         <!-- <h2>Gauge Information</h2> -->
         <div class="gaugeInfoDiv">
             <label for="gaugeSize" id="gaugeSizeLabel">
-                <input type="number" name="gaugeSwatchSize" id="gaugeSize" class="gaugeInfoInput" min="1" placeholder="swatch size" value="0" required>
+                <input type="number" name="gaugeSwatchSize" id="gaugeSize" class="gaugeInfoInput" min="1" placeholder="swatch size" autocomplete="on" required>
                 <!-- How many "unit cm or inches" does your gauge swatch have? -->
             </label>
         </div>
         <div class="gaugeInfoDiv">
             <label for="gaugeSts" id="gaugeStsLabel">
-                <input type="number" name="gaugeSts" id="gaugeSts" class="gaugeInfoInput" min="1" placeholder="sts" value="0" required>
+                <input type="number" name="gaugeSts" id="gaugeSts" class="gaugeInfoInput" min="1" placeholder="sts" value="0" autocomplete="on" required>
                 <!-- How many sts in (10cm?) (from your gauge swatch) -->
             </label>
         </div>
         <div class="gaugeInfoDiv">
             <label for="gaugeRows" id="gaugeRowsLabel">
-                <input type="number" name="gaugeRows" id="gaugeRows" class="gaugeInfoInput" min="1" placeholder="rows" value="0" required>
+                <input type="number" name="gaugeRows" id="gaugeRows" class="gaugeInfoInput" min="1" placeholder="rows" value="0" autocomplete="on" required>
                 <!-- How many rows in (10cm?) (from your gauge swatch) -->
             </label>
         </div>
     </section>
 </fieldset>
 
-       <fieldset>
+       <fieldset id="measurements-fieldset">
         <legend>Your Foot Measurements</legend>
         <section role="region" aria-labelledby="foot-measurements">
             
@@ -80,12 +80,12 @@
                 <div class="footMeasurements">
                     <!-- <h2>Your Foot Measurements</h2> -->
                     <label for="footLength" id="footLengthLabel">
-                        <input type="number" name="footLength" id="footLength" class="footInfoInput" min="1" placeholder="foot length" value="0" required> The LENGTH of your foot
+                        <input type="number" name="footLength" id="footLength" class="footInfoInput" min="1" placeholder="foot length" value="0" autocomplete="on" required> The LENGTH of your foot
                     </label>
                 </div>
                 <div class="footMeasurements">
                     <label for="footWidth" id="footWidthLabel">
-                        <input type="number" name="footWidth" id="footWidth" class="footInfoInput" min="1" placeholder="foot width" value="0" required> The WIDTH of your foot
+                        <input type="number" name="footWidth" id="footWidth" class="footInfoInput" min="1" placeholder="foot width" value="0" autocomplete="on" required> The WIDTH of your foot
                     </label>
                 </div>
                 <div class="notes">

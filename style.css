@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .background-img-div {
-    background: rgb(177, 230, 173) url(https://images4-f.ravelrycache.com/uploads/craftyManu/793978829/20210622_155527_medium.jpg) no-repeat center;
+    background: var(--light-background) url(https://images4-f.ravelrycache.com/uploads/craftyManu/793978829/20210622_155527_medium.jpg) no-repeat center;
     background-size: contain;
     align-items: center;
     display: flex;

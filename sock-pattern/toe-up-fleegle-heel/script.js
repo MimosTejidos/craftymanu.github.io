@@ -33,6 +33,9 @@ if (localStorage.theme) {
     console.log('Theme: ' + localStorage.theme);
   }
 
+  //getting user stored values:
+  document.getElementById('measuring-system-selection').addEventListener('focusout', localStorage_measuringSystem);
+  
         
 } //end of init function 
 
@@ -57,14 +60,17 @@ console.log('topNava.length: ' + topNava.length);
   measuringSystem = document.querySelector('#measuring-system-selection').value;
   if (measuringSystem == "cm")   {
       enableSwatchSize();
-      console.log('cm or inches?: ' + measuringSystem);
+    //   console.log('cm or inches?: ' + measuringSystem);
   } else if (measuringSystem == "inches") {
       enableSwatchSize();
-      console.log('cm or inches?: ' + measuringSystem);
+    //   console.log('cm or inches?: ' + measuringSystem);
   } else {
       alert('Please choose between the metric or the imperial system');
-      console.log('cm or inches?: ' + measuringSystem);
-  }} //end of getMeasuringSystemChoice function
+    //   console.log('cm or inches?: ' + measuringSystem);
+  }
+  document.getElementById('gaugeSize').addEventListener('focusout', localStorage_GaugeSize);
+
+} //end of getMeasuringSystemChoice function
 
   function getDOMElementes() {
       console.log('getDOMElements function EXECUTED');
@@ -108,20 +114,21 @@ function enableSwatchSize() {
 } //end of enableSwatchSize function
 
 function writeInputFields() {
+    document.getElementById('gaugeSts').addEventListener('focusout', localStorage_Sts); //// NOT WORKING
     measuringSystemMenu.disabled = true;
     gaugeSize = document.querySelector('#gaugeSize').value;
     gaugeStsLabel.innerHTML = '<input type="number" name="gaugeSts" id="gaugeSts" class="gaugeInfoInput" min="1" placeholder="sts" required> ' + ' sts in ' + gaugeSize + ' ' + measuringSystem + '.';
     gaugeStsField = document.querySelector('#gaugeSts');
-    console.log('Gauge sts value: ' + gaugeSts);
+    // console.log('Gauge sts value: ' + gaugeSts);
     gaugeRowsLabel.innerHTML = '<input type="number" name="gaugeRows" id="gaugeRows" class="gaugeInfoInput" min="1" placeholder="rows" required>' + '  rows in ' + gaugeSize + ' ' + measuringSystem + '.';
     gaugeRowsField = document.querySelector('#gaugeRows'); 
-    console.log('Gauge ros value: ' + gaugeRows);
+    // console.log('Gauge rows value: ' + gaugeRows);
     footLengthLabel.innerHTML = 'The LENGTH of your foot: <input type="number" name="footLength" id="footLength" class="footInfoInput" min="1" placeholder="foot length" required> ' + measuringSystem; 
     footLengthField = document.querySelector('#footLength');
-    console.log('Foot length value: ' + footLength);
+    // console.log('Foot length value: ' + footLength.value);
     footWidthLabel.innerHTML = 'The WIDTH of your foot (circumference): <input type="number" name="footWidth" id="footWidth" class="footInfoInput" min="1" placeholder="foot width" required> ' + measuringSystem;
     footWidthField = document.querySelector('#footWidth');
-    console.log('Foot width value: ' + footWidth);
+    // console.log('Foot width value: ' + footWidth);
     resetButton.disabled = false;
     enableInputFields();
 } // end of writeInputFields function
@@ -192,10 +199,12 @@ function getSubmitedValues() {
     gaugeSize = document.querySelector('#gaugeSize').value;
     gaugeSts = document.querySelector('#gaugeSts').value;
     gaugeRows = document.querySelector('#gaugeRows').value;
+    // localStorage_Rows; //// NOT WORKING??
     footLength = document.querySelector('#footLength').value;
     footWidth = document.querySelector('#footWidth').value;
     userNotes = document.querySelector('#userNotes').value;
     document.querySelector('#buttonInstructions').innerHTML = "";
+    
     seeSubmitedValues();
       if (measuringSystem == "cm") {
           measuringSystem = "cm";
@@ -236,9 +245,9 @@ calculatePattern();
      if ((HALF_CO_sts % 2) !== 0) {
          HALF_CO_sts = Math.round(HALF_CO_sts);
      }
-     if ((HALF_CO_sts % 4) !== 0) {
-        HALF_CO_sts = HALF_CO_sts-1;
-    }
+    //  if ((HALF_CO_sts % 4) !== 0) {
+    //     HALF_CO_sts = HALF_CO_sts-1;
+    // }
      foot_sts = HALF_CO_sts * 4;
      console.log("HALFCOsts: " + HALF_CO_sts );
      if (foot_sts % 2 !== 0) {
@@ -348,8 +357,11 @@ patternInstructions.appendChild(breaks);
 document.querySelector('.row').style = "flex-direction: column-reverse;";
 topFunction()
 window.onscroll = function() {scrollFunction()};
-body.innerHTML = "";
-
+// body.innerHTML = "";
+// document.getElementsByTagName('fieldset').style.visibility = "hidden";
+//try with a for loop for all the fieldset elements
+// document.getElementById('gauge-fieldset').style.visibility = "hidden";
+// document.getElementById('measurements-fieldset').style.visibility = "hidden";
 } //end of the writePatternInCM function
 
 
@@ -442,3 +454,47 @@ function darkLightMode() {
          console.log('Theme: ' + localStorage.theme);
    } //end of saving dark-light theme user preference
 
+
+//storing user inputs:
+   function localStorage_measuringSystem() {
+    if (localStorage.measuringSystemPreference) {
+      console.log('Measuring system STORED locally: ' + localStorage.measuringSystemPreference);
+    } else {
+      const measuringSystemChoice = document.getElementById("measuring-system-selection").value;
+      localStorage.measuringSystemPreference = measuringSystemChoice;
+      console.log('Measureing system STORED: ' + localStorage.measuringSystemPreference);
+    }
+  } 
+  
+  function localStorage_GaugeSize() {
+    if (localStorage.gaugeSize) {
+      console.log(`Gauge: ${localStorage.gaugeSize} ${localStorage.measuringSystemPreference}`);
+    } else {
+      const gaugeSize = document.getElementById("gaugeSize").value;
+      localStorage.gaugeSize = gaugeSize;
+      console.log(`Gauge: ${localStorage.gaugeSize} ${localStorage.measuringSystemPreference}`);
+    }
+  } 
+
+  function localStorage_Sts() { //not working
+    console.log('LOCAL STORAGE STS!!')
+    if (localStorage.sts) {
+      console.log(`Sts: ${localStorage.sts} sts`);
+    } else {
+      const localSts = document.getElementById("gaugeSts").value;
+      localStorage.sts = localSts;
+      console.log(`Sts: ${localStorage.sts} sts`);
+    }
+  } 
+
+  function localStorage_Rows() { //not working
+    if (localStorage.rows) {
+      console.log(`Rows (local storage): ${localStorage.rows} rows`);
+    } else {
+      const localRows = document.getElementById("gaugeRows").value;
+      localStorage.sts = localRows;
+      console.log(`Rows (local storage): ${localStorage.sts} rows`);
+    }
+  } 
+  
+  //end of storing user inputs
