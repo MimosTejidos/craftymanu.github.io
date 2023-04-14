@@ -1,0 +1,115 @@
+@media (prefers-reduced-motion: no-preference) {
+  * {
+  scroll-behavior: smooth;
+}
+}
+ 
+ /* START of theme switch: */
+ 
+ /* The switch - the box around the slider */
+ .switch {
+    position: relative;
+    display: inline-block;
+    width: 4em;
+    height: 2em;
+    margin: 0.5em 1em 0 1em;
+  }
+ /* Hide default HTML checkbox */
+ .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.2em;
+    width: 1.2em;
+    left: 0.4em;
+    bottom: 0.4em;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  input:checked + .slider {
+    /* background-color: #2196F3; */
+    background-color: var(--teal);
+  }
+  input:focus + .slider {
+    /* box-shadow: 0 0 1px #2196F3; */
+    box-shadow: 0 0 1px var(--teal);
+  }
+  input:checked + .slider:before {
+    -webkit-transform: translateX(1.5em);
+    -ms-transform: translateX(1.5em);
+    transform: translateX(1.8em);
+  }
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 2em;
+  }
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+#lightSwitchDiv {
+    /* border: 1px solid red; */
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    overflow: hidden;
+    align-self: flex-end;  
+} 
+
+#lightSwitchDiv p {
+    font-size: 0.5em;
+    color:gray;
+    font-weight: normal;
+    font-family:'Courier New', Courier, monospace
+}
+/* END of theme switch: */
+
+.light-selected  {
+  color:#071324 !important;
+  font-weight: bold !important; 
+}
+.dark-selected  {
+  color: antiquewhite !important;
+  font-weight: bold !important;
+}
+
+  /* dark mode style */
+  body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+  }
+  .dark-mode a {
+    color: whitesmoke;
+    background-color: #1d3557;
+  }
+  .dark-mode {
+    background-color: #071324;
+    color: antiquewhite;
+  }
+  .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode legend {
+    color:#c7e0aa;
+  }
+  .dark-mode footer {
+    background-color: #1d3557;
+  }
+  /* end of dark mode style*/

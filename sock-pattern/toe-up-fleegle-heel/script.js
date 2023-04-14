@@ -8,36 +8,38 @@ function init() {
     resetButton.addEventListener('click', resetAll);
 
 
-//scroll to top button:
-topButton = document.querySelector('#topButton');
-topButton.addEventListener('click', topFunction);
-// Dark light themes:
-darkLightModeSwitch = document.querySelector('.switch');
-darkLightModeSwitch.addEventListener('change', darkLightMode);
-darkLightCheckbox = document.getElementById("light-dark-checkbox");
-// light/dark theme local storage:
-if (localStorage.theme) {
-    console.log('saved theme: ' + localStorage.theme);
-    if (localStorage.theme == "light-mode dark-mode") {
-        
-        var darkCheckbox = '<input type="checkbox" id="light-dark-checkbox" checked>'; //it can be anything
-        if(darkLightCheckbox.outerHTML) { //if outerHTML is supported
-        darkLightCheckbox.outerHTML = darkCheckbox; ///it's simple replacement of whole element with contents of str var
-        }
-        // console.log('checked')
-        darkLightMode();
-    }
-  } else {
-    const theme = darkLightCheckbox.value;
-    localStorage.theme = theme;
-    console.log('Theme: ' + localStorage.theme);
-  }
+  //scroll to top button:
+  topButton = document.querySelector('#topButton');
+  topButton.addEventListener('click', topFunction);
 
-  //getting user stored values:
-  document.getElementById('measuring-system-selection').addEventListener('focusout', localStorage_measuringSystem);
+  // Dark light themes:
+  /*
+  let darkLightModeSwitch = document.querySelector('.switch');
+  darkLightModeSwitch.addEventListener('change', darkLightMode);
+  let darkLightCheckbox = document.getElementById("light-dark-checkbox");
   
-        
-} //end of init function 
+  // light/dark theme local storage:
+  if (localStorage.theme) {
+      console.log('saved theme: ' + localStorage.theme);
+      if (localStorage.theme == "light-mode dark-mode") {
+          
+          var darkCheckbox = '<input type="checkbox" id="light-dark-checkbox" checked>'; //it can be anything
+          if(darkLightCheckbox.outerHTML) { //if outerHTML is supported
+          darkLightCheckbox.outerHTML = darkCheckbox; ///it's simple replacement of whole element with contents of str var
+          }
+          // console.log('checked')
+          darkLightMode();
+      }
+    } else {
+      const theme = darkLightCheckbox.value;
+      localStorage.theme = theme;
+      console.log('Theme: ' + localStorage.theme);
+    } */
+
+    //getting user stored values:
+    document.getElementById('measuring-system-selection').addEventListener('focusout', localStorage_measuringSystem);
+    
+} // END of init function 
 
 function resetAll() {
     console.log('topNav: ' + topNav);
@@ -357,7 +359,7 @@ patternInstructions.appendChild(breaks);
 document.querySelector('.row').style = "flex-direction: column-reverse;";
 topFunction()
 window.onscroll = function() {scrollFunction()};
-// body.innerHTML = "";
+ body.innerHTML = "";
 // document.getElementsByTagName('fieldset').style.visibility = "hidden";
 //try with a for loop for all the fieldset elements
 // document.getElementById('gauge-fieldset').style.visibility = "hidden";
@@ -365,14 +367,14 @@ window.onscroll = function() {scrollFunction()};
 } //end of the writePatternInCM function
 
 
- function addH4Titles(title, id, specialClass, classes) {
+ function addH4Titles(title, topNavTitle, specialClass, hasExtraClasses) {
     const title4 = document.createElement('h4');
     title4.innerHTML = title;
     patternInstructions.appendChild(title4);
     console.log('addH4Titles function EXECUTED for: ' + title);
     title4.classList.add('light-mode');
     title4.classList.add('morePadding');
-    if ( id === 'yes') {
+    if ( topNavTitle === 'yes') {
         title4.setAttribute('id', title)
         topNav = document.querySelector('.topNav');
         const aNav = document.createElement('a');
@@ -382,9 +384,9 @@ window.onscroll = function() {scrollFunction()};
         aNav.classList.add('topNava');
         aNav.classList.add('light-mode');
     }
-    if (classes === 'yes') {
-        title4.classList.add(specialClass)
-    }
+    // if (hasExtraClasses === 'yes') {
+    //     title4.classList.add(specialClass)
+    // }  //it seems to never be used
  } 
 
 function addParagraph(text, specialClass, classes) {
@@ -423,7 +425,8 @@ function topFunction() {
 
 // light/dark mode toggle:
 
-function darkLightMode() {
+ /*
+ function darkLightMode() {
 
     var element = document.body;
     
@@ -445,14 +448,16 @@ function darkLightMode() {
         storeDarkLightTheme()
     
     
-  } //end of darkLightMode funtion
+  } */ //end of darkLightMode funtion
 
   //saving dark-light theme user preference:
-   function storeDarkLightTheme() {
+  /* 
+  function storeDarkLightTheme() {
          const theme = document.getElementById("mainDiv").className;
          localStorage.theme = theme;
          console.log('Theme: ' + localStorage.theme);
-   } //end of saving dark-light theme user preference
+   } */
+   //end of saving dark-light theme user preference
 
 
 //storing user inputs:

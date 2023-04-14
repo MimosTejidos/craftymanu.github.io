@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" href="sock-pattern/theme-style.css">
+    <script src="sock-pattern/toe-up-fleegle-heel/script-theme-switch.js"></script>
     <script src="https://kit.fontawesome.com/dc7fa263a5.js" crossorigin="anonymous"></script>
     <title>Knitting patterns</title>
     <meta property="og:title" content="Customizable sock pattern" />
@@ -14,13 +16,24 @@
     <meta property="og:description" content="Free online sock pattern generator" />
 </head>
 <body>
-    <div class="background-img-div">
+    <!-- Rounded switch: -->
+    <div id="lightSwitchDiv">
+        <p id="light" class="light-selected">Light Mode</p>
+        <label class="switch" id="themeSwitch">
+            <input type="checkbox" id="light-dark-checkbox">
+            <span class="slider round"></span>
+        </label>
+        <p id="dark">Dark Mode</p>
+    </div>
+    <!-- patterns: -->
+    <div class="background-img-div" class="light-mode">
         <a href="sock-pattern/toe-up-fleegle-heel/toe-up-fleegle-heel.html" target="_blank"></a>
-        <div class="row semi-transparent-div"> 
+        <div class="row semi-transparent-div" class="light-mode"> 
             <div class="col-2 icon"><i class="fa-solid fa-socks"></i></div>
-            <div class="col-10"><h2><a href="sock-pattern/toe-up-fleegle-heel/toe-up-fleegle-heel.html" target="_blank">Toe Up Fleegle Heel Socks</a></h2></div>
+            <div class="col-10"><h2 class="light-mode"><a href="sock-pattern/toe-up-fleegle-heel/toe-up-fleegle-heel.html" target="_blank">Toe Up Fleegle Heel Socks</a></h2></div>
         </div>
     </div>
+    <button id="topButton" title="Go to top">Go to Top</button>
     </body>
 </html>
 
