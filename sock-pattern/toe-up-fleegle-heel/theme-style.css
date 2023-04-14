@@ -130,10 +130,13 @@ body {
   padding: 0;
 }
 
-.parent {
+ .parent {
   padding: 0.5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.5rem
+  grid-template-columns: repeat(auto-fit, minmax(301px, auto));
+  gap: 0.5rem;
+} 
 
-}
+/* .pattern {
+  border: 1px solid red;
+} */

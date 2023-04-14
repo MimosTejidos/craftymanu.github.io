@@ -1,6 +1,6 @@
-window.onload = init()
+window.onload = initiation()
 
-function init() {
+function initiation() {
     // Dark light themes:
     let darkLightModeSwitch = document.querySelector('.switch');
     let darkLightCheckbox = document.getElementById("light-dark-checkbox");
